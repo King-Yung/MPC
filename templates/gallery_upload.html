@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css">
+</head>
+
+<body>
+
+<h2>Upload Gallery Images</h2>
+
+<form action="/gallery/upload/api/{{ gallery.id }}/"
+      class="dropzone"
+      id="galleryDropzone"
+      method="post"
+      enctype="multipart/form-data">
+    {% csrf_token %}
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+
+<script>
+Dropzone.options.galleryDropzone = {
+    url: "/gallery/upload/api/{{ gallery.id }}/",
+    paramName: "file",
+    uploadMultiple: true,
+    parallelUploads: 10,
+    acceptedFiles: "image/*",
+};
+</script>
+
+</body>
+</html>

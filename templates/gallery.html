@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery | MIGC{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="position-relative">
+
+
+<img src="{% static 'images/gallery.png' %}"
+     class="w-100"
+     alt="Gallery Banner"
+     style="height: 60vh; object-fit: cover;">
+</section>
+
+<!-- INTRO SECTION -->
+
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+
+
+    <h2 class="fw-bold text-warning mb-3">
+        Moments That Matter
+    </h2>
+
+    <p class="lead">
+        <em><strong>
+            Capturing moments of worship, fellowship, outreach and transformation.
+        </strong></em>
+    </p>
+
+    <p class="lead">
+        Explore highlights from our services, conferences, outreaches,
+        crusades, special events and ministry activities.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- GALLERY GRID -->
+
+<section class="py-5">
+    <div class="container">
+
+
+    <div class="row g-4">
+
+        {% for image in gallery_images %}
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="gallery-card">
+
+                <a href="{{ image.image.url }}" target="_blank">
+                    <img src="{{ image.image.url }}"
+                         class="img-fluid rounded shadow"
+                         alt="Gallery Image">
+                </a>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12 text-center">
+
+            <h3>No gallery images available yet.</h3>
+
+            <p class="text-muted">
+                Images uploaded from the admin panel will appear here.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+</section>
+
+<style>
+
+.gallery-card{
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.gallery-card img{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: all .4s ease;
+}
+
+.gallery-card:hover img{
+    transform: scale(1.08);
+}
+
+</style>
+
+{% endblock %}

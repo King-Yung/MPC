@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sermons | MIGC{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="position-relative overflow-hidden">
+    <img src="{% static 'images/message.png' %}"
+         alt="Sermon Hero"
+         class="img-fluid w-100 shadow-lg"
+         style="height: 55vh; object-fit: cover;">
+
+    <!-- <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1 class="display-4 fw-bold">Life Changing Messages</h1>
+        <p class="lead">Experience the Word of God in a new dimension</p>
+    </div> -->
+</section>
+
+<section class="bg-dark text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold text-warning">
+            Sermons & Messages
+        </h1>
+
+
+    <p class="lead">
+        Watch, listen and download life-transforming messages.
+    </p>
+</div>
+
+
+</section>
+
+<!-- SEARCH -->
+
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <input type="text"
+                       class="form-control form-control-lg"
+                       placeholder="Search sermons...">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED SERMON -->
+
+<section class="py-5 bg-light">
+    <div class="container">
+
+        <div class="card cardi border-0 shadow-lg rounded-4 overflow-hidden">
+
+            <div class="row g-0 align-items-stretch">
+
+                <!-- Video Section -->
+                <div class="col-lg-7">
+
+                    <div class="ratio ratio-16x9 h-100">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/epvdjO5dbzc?si=r_gU4UVDoHAN0-vz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+                <!-- Content Section -->
+                <div class="col-lg-5 position-relative">
+
+                    <div class="h-100 p-5 text-white d-flex flex-column justify-content-center"
+                         style="background: linear-gradient(135deg, #0d1b2a, #1b263b);">
+
+                        <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-semibold align-self-start">
+                            🎥 Featured Message
+                        </span>
+
+                        <h2 class="fw-bold mb-3">
+                            Pst Dabs Uba Prays for the Kidnapped Children in Oyo State
+                        </h2>
+
+                        <p class="text-light mb-4">
+                            Join believers around the world in prayer as we seek God's
+                            intervention, protection, healing, and restoration for the
+                            affected families and communities.
+                        </p>
+
+                        <div class="mb-4">
+                            <span class="text-warning fw-bold">Speaker:</span>
+                            <span class="text-light">Pst Dabs Uba</span>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3">
+
+                            <a href="https://www.youtube.com/watch?v=epvdjO5dbzc"
+                               target="_blank"
+                               class="btn btn-warning btn-lg px-4">
+                                <i class="bi bi-play-fill"></i> Watch Now
+                            </a>
+
+                            <!-- <a href="#"
+                               class="btn btn-outline-light btn-lg px-4">
+                                <i class="bi bi-download"></i> Download MP3
+                            </a> -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- SERMON LIST -->
+<section class="pb-5" >
+    <div class="container py-5">
+
+        <div class="row g-4">
+
+            {% for sermon in sermons %}
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    {% if sermon.thumbnail %}
+                    <img src="{{ sermon.thumbnail.url }}"
+                         class="card-img-top"
+                         alt="{{ sermon.title }}"
+                         style="height:250px; object-fit:cover;">
+                    {% else %}
+                    <img src="{% static 'images/default-sermon.jpg' %}"
+                         class="card-img-top"
+                         alt="Default Sermon"
+                         style="height:250px; object-fit:cover;">
+                    {% endif %}
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h5 class="fw-bold">
+                            {{ sermon.title }}
+                        </h5>
+
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-fill"></i>
+                            {{ sermon.speaker }}
+                        </p>
+
+                        <p class="flex-grow-1">
+                            {{ sermon.description|truncatewords:20 }}
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        {% if sermon.video %}
+                        <div class="d-flex justify-content-between">
+
+                            <a href="{{ sermon.video.url }}"
+                               target="_blank"
+                               class="btn btn-danger">
+                                <i class="bi bi-play-fill"></i>
+                                Watch
+                            </a>
+
+                            <a href="{{ sermon.video.url }}"
+                               download
+                               class="btn btn-success">
+                                <i class="bi bi-download"></i>
+                                Download
+                            </a>
+
+                        </div>
+                        {% else %}
+                        <div class="text-center text-muted">
+                            No video available
+                        </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12">
+                <div class="alert alert-info text-center shadow-sm">
+                    <h4 class="mb-2">No Sermons Available</h4>
+                    <p class="mb-0">
+                        Check back later for new messages and teachings.
+                    </p>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

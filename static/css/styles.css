@@ -1,0 +1,255 @@
+/* =========================
+   GLOBAL THEME
+========================= */
+
+body {
+    background: linear-gradient(135deg, #030811, #243b6e);
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: rgba(255,255,255,0.08) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link,
+.navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+    color: #dbeafe !important;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: rgba(255,255,255,0.12);
+    border: none;
+    backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 20px;
+}
+
+.card-title,
+.card-text {
+    color: white;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    color: white;
+}
+
+.text-muted {
+    color: rgba(255,255,255,0.75) !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+    background: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+}
+
+.btn-outline-primary {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-primary:hover {
+    background: #fff;
+    color: #182848;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-control,
+.form-select {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-color: #86b7fe;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table {
+    color: white;
+}
+
+.table thead {
+    background: rgba(255,255,255,0.1);
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    color: #cfe2ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: rgba(0,0,0,0.15);
+    color: white;
+    padding: 20px 0;
+}
+
+/* =========================
+   CONTAINERS
+========================= */
+
+.container,
+.container-fluid {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   HERO OVERLAY
+========================= */
+
+.hero-overlay {
+    background: rgba(0,0,0,0.4);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* =========================
+   SHADOW EFFECTS
+========================= */
+
+.shadow-lg {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25) !important;
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.bi {
+    color: #ffffff;
+}
+
+
+
+
+.min-vh-75{
+    min-height:75vh;
+}
+
+.card{
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* INDEX PAGE STYLES */
+
+.ministry-card{
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.ministry-card:hover{
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,.3) !important;
+}
+
+
+/* FOR SERMON PAGE */
+.cardi {
+    transition: all 0.4s ease;
+}
+
+.cardi:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.2) !important;
+}
+
+.btn {
+    border-radius: 50px;
+}
+
+iframe {
+    border: none;
+}
+
+/* .ministry-card h5,
+.ministry-card p{
+    transition: all 0.4s ease;
+}
+
+.ministry-card:hover h5{
+    letter-spacing: 1px;
+} */
+
+
+/* FOR ABOUT PAGE */
+/* 
+ */
+
+/* FOOTER PAGE */
+footer ul li a{
+    transition: all 0.3s ease;
+}
+
+footer ul li a:hover{
+    color: #ffc107 !important;
+    padding-left: 5px;
+}
+
+.social-icon{
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icon:hover{
+    transform: translateY(-5px) scale(1.2);
+    color: #ffc107 !important;
+    text-shadow: 0 0 10px #ffc107;
+}

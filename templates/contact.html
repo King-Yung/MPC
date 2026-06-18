@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact | MIGC{% endblock %}
+
+{% block content %}
+
+<style>
+.auto-dismiss {
+    transition: opacity 0.5s ease;
+}
+</style>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show auto-dismiss">
+            {{ message }}
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<!-- HERO SECTION -->
+<section class="position-relative">
+
+    <img src="{% static 'images/contact.jpg' %}"
+         class="w-100"
+         style="height: 60vh; object-fit: cover;"
+         alt="Contact Banner">
+
+    <!-- OVERLAY -->
+    <!-- <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div> -->
+
+    <!-- TEXT -->
+    
+</section>
+
+<!-- <div class="container text-center text-white px-3"
+         data-aos="fade-down">
+
+        <h1 class="fw-bold">Contact Us</h1>
+        <p class="lead mb-0 text-warning fw-bold"
+           style="text-shadow: 2px 2px 6px rgba(0,0,0,0.7);">
+            We would love to hear from you
+        </p>
+
+    </div> -->
+
+<!-- CONTACT SECTION -->
+<section class="py-5">
+    <div class="container ">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Get In Touch</h2>
+            <p class="text-muted">Send us a message and we’ll respond as soon as possible</p>
+        </div>
+
+        <div class="row g-5">
+
+            <!-- CONTACT FORM -->
+            <div class="col-lg-7" data-aos="fade-right">
+
+                <div class="card border-0 shadow-lg rounded-4">
+                    <div class="card-body p-4 bg-primary rounded-4">
+
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Full Name</label>
+                                    <input type="text"
+                                        name="full_name"
+                                        class="form-control rounded-3"
+                                        placeholder="Your Name"
+                                        required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Email</label>
+                                    <input type="email"
+                                        name="email"
+                                        class="form-control rounded-3"
+                                        placeholder="Your Email"
+                                        required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Subject</label>
+                                    <input type="text"
+                                        name="subject"
+                                        class="form-control rounded-3"
+                                        placeholder="Subject"
+                                        required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Message</label>
+                                    <textarea name="message"
+                                            class="form-control rounded-3"
+                                            rows="5"
+                                            placeholder="Write your message..."
+                                            required></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit"
+                                            class="btn btn-light rounded-pill px-4">
+                                        Send Message
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTACT INFO -->
+           <div class="col-lg-5" data-aos="fade-left">
+
+    <!-- LOCATION -->
+    <div class="card border-0 shadow-lg rounded-4 mb-4">
+        <div class="card-body p-4 bg-primary rounded-4">
+
+            <h5 class="fw-bold text-light d-flex align-items-center gap-2">
+                <i class="bi bi-geo-alt-fill"></i> Our Location
+            </h5>
+
+            <p class="text-muted mb-0">
+                The Flourish Place, Masterplan International Gospel Center, Behind Foursquare Church,
+                Arab Road, Kubwa, Abuja
+            </p>
+
+        </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="card border-0 shadow-lg rounded-4 mb-4">
+        <div class="card-body p-4 bg-primary rounded-4">
+
+            <h5 class="fw-bold text-light d-flex align-items-center gap-2">
+                <i class="bi bi-envelope-fill"></i> Email
+            </h5>
+
+            <p class="text-muted mb-0">
+                <a href="mailto:info@migc.org" class="text-decoration-none">
+                    info@migc.org
+                </a>
+            </p>
+
+            <p class="text-muted mb-0">
+                <a href="mailto:masterplaninternational01@gmail.com" class="text-decoration-none">
+                    masterplaninternational01@gmail.com
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- PHONE -->
+    <div class="card border-0 shadow-lg rounded-4 mb-4">
+        <div class="card-body p-4 bg-primary rounded-4" >
+
+            <h5 class="fw-bold text-light d-flex align-items-center gap-2">
+                <i class="bi bi-telephone-fill"></i> Phone
+            </h5>
+
+            <p class="text-muted mb-0">
+                <a href="tel:+2348063622085" class="text-decoration-none">
+                    +234 806 362 2085
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="card border-0 shadow-lg rounded-4">
+    <div class="card-body p-4 text-center bg-primary rounded-4">
+
+        <h5 class="fw-bold text-primary mb-3 d-flex justify-content-center align-items-center gap-2 text-light">
+            <i class="bi bi-share-fill"></i> Follow Us
+        </h5>
+
+        <!-- BUTTON ROW (NO WRAP) -->
+        <div class="d-flex justify-content-center align-items-center flex-nowrap gap-2">
+
+            <a href="https://www.facebook.com/masterplaninternational" class="btn btn-outline-primary btn-sm rounded-pill">
+                <i class="bi bi-facebook"></i> Facebook
+            </a>
+
+            <a href="https://www.instagram.com/masterplaninternational?igsh=MW90aGwyeHIxdmJwMQ==" class="btn btn-outline-danger btn-sm rounded-pill">
+                <i class="bi bi-instagram"></i> Instagram
+            </a>
+
+            <a href="https://youtube.com/@masterplaninternationalgospel?si=sG8dWxDKyll3krWf" class="btn btn-outline-danger btn-sm rounded-pill">
+                <i class="bi bi-youtube"></i> YouTube
+            </a>
+
+            <a href="https://www.tiktok.com/@masterplaninternational?is_from_webapp=1&sender_device=pc" class="btn btn-outline-dark btn-sm rounded-pill" >
+                <i class="bi bi-tiktok"></i> TikTok
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MAP SECTION -->
+<section class="py-5 bg-light">
+    <div class="container" data-aos="zoom-in">
+
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">Find Us</h2>
+        <p class="text-muted">Visit us at our location</p>
+    </div>
+
+    <div class="rounded-4 overflow-hidden shadow-lg">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d875.7329696545978!2d7.3183824!3d9.1657397!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sng!4v1781534841957!5m2!1sen!2sng" 
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    
+
+</div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        document.querySelectorAll('.auto-dismiss').forEach(function (alert) {
+            let bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+        });
+    }, 3000); // 3000ms = 3 seconds
+});
+</script>
+
+{% endblock %}

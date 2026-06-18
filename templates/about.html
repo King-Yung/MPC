@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | MIGC{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="position-relative">
+
+    <img src="{% static 'images/about.jpg' %}"
+         class="w-100"
+         style="height: 60vh; object-fit: cover;"
+         alt="About Banner">
+
+    <!-- OVERLAY -->
+    <!-- <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div> -->
+
+    <!-- TEXT -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3"
+         data-aos="fade-down">
+
+        <!-- <h1 class="fw-bold">About MIGC</h1> -->
+        
+
+    </div>
+</section>
+
+
+<!-- WHO WE ARE -->
+<section class="py-5">
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <!-- IMAGE -->
+            <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-right">
+                <img src="{% static 'images/about-logo.png' %}"
+                    class="rounded-4 shadow w-75"
+                    alt="About MIGC">
+            </div>
+
+            <!-- TEXT -->
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <h2 class="fw-bold mb-3">Who We Are</h2>
+                <p class="lead mb-2 text-warning fw-bold bg-black shadow-sm px-2 py-1 d-inline-block rounded-2">
+                    Faith • Purpose • Community • Impact
+                </p>
+
+                <p class="text-muted">
+                    MIGC is a Christ-centered community focused on spiritual growth,
+                    discipleship, and impactful service.
+                </p>
+
+                <p class="text-muted">
+                    We are committed to raising believers who are grounded in the Word
+                    and empowered to transform their world.
+                </p>
+
+                <a href="#mission" class="btn btn-warning rounded-pill px-4 mt-3">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MISSION & VISION -->
+<section id="mission" class="py-5 bg-light">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold text-dark">Our Mandate</h2>
+            <!-- <p class="text-muted">Mission & Vision</p> -->
+        </div>
+
+        <div class="row g-4">
+
+            <!-- MISSION -->
+            <div class="col-md-6" data-aos="zoom-in">
+                <div class="card border-0 shadow h-100 rounded-4">
+                    <div class="card-body p-4 bg-dark text-white rounded-4">
+                        <h4 class="fw-bold text-warning">Mission</h4>
+                        <p class="text-light mb-0">
+                            To preach the gospel of Christ, nurture believers,
+                            and build a strong spiritual community rooted in God’s Word.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISION -->
+            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="150">
+                <div class="card border-0 shadow h-100 rounded-4">
+                    <div class="card-body p-4 bg-dark text-white rounded-4">
+                        <h4 class="fw-bold text-warning">Vision</h4>
+                        <p class="text-light mb-0">
+                            To raise a generation of spiritually mature believers
+                            impacting the world with Christ-like values.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CORE VALUES -->
+<section class="py-5">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Core Values</h2>
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <div class="col-md-4 " data-aos="flip-left">
+                <div class="card border-0 shadow rounded-4 h-100 bg-dark text-white">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-warning">Faith</h5>
+                        <p class="text-light mb-0">
+                            Trusting God in all things.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="150">
+                <div class="card border-0 shadow rounded-4 h-100 bg-dark text-white">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-warning">Love</h5>
+                        <p class="text-light mb-0">
+                            Showing Christ-like love to everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                <div class="card border-0 shadow rounded-4 h-100 bg-dark text-white">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-warning">Excellence</h5>
+                        <p class="text-light mb-0">
+                            Serving with integrity and excellence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-5 bg-black text-white">
+    <div class="container text-center" data-aos="fade-up">
+
+        <h2 class="fw-bold">Join Our Community</h2>
+        <p class="mb-4">Be part of what God is doing through MIGC</p>
+
+        <a href="{% url 'contact' %}" class="btn btn-light rounded-pill px-4">
+            Get Involved
+        </a>
+
+    </div>
+</section>
+
+{% endblock %}
